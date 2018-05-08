@@ -90,6 +90,7 @@ def L3():
                     file.write(str(brute) + '\n')
                     gc.collect()
 
+                    
 def L4():
     for a in range(0, len(lib)):
         for b in range(0, len(lib)):
@@ -100,6 +101,7 @@ def L4():
                         file.write(str(brute) + '\n')
                         gc.collect()
 
+                        
  def L5():
     for a in range(0, len(lib)):
         for b in range(0, len(lib)):
