@@ -98,6 +98,8 @@ def L4():
                     brute = lib[a] + lib[b] + lib[c] + lib[d]
                     with open("file3.txt", 'a') as file:
                         file.write(str(brute) + '\n')
+                        gc.collect()
+
  def L5():
     for a in range(0, len(lib)):
         for b in range(0, len(lib)):
@@ -106,5 +108,7 @@ def L4():
                     for e in range(0, len(lib)):
                         brute = lib[a] + lib[b] + lib[c] + lib[d] + lib[e]
                         with open("file3.txt", 'a') as file:
-                            file.write(str(brute) + '\n')                   
+                            file.write(str(brute) + '\n') 
+                            gc.collect()
+                       
 menu()
