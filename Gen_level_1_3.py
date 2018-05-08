@@ -99,16 +99,4 @@ def L4():
                     with open("file3.txt", 'a') as file:
                         file.write(str(brute) + '\n')
                         gc.collect()
-
- def L5():
-    for a in range(0, len(lib)):
-        for b in range(0, len(lib)):
-            for c in range(0, len(lib)):
-                for d in range(0, len(lib)):
-                    for e in range(0, len(lib)):
-                        brute = lib[a] + lib[b] + lib[c] + lib[d] + lib[e]
-                        with open("file3.txt", 'a') as file:
-                            file.write(str(brute) + '\n') 
-                            gc.collect()
-                       
 menu()
