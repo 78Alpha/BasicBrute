@@ -3,14 +3,16 @@ import gc
 lib = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890`,./;'[]~!@#$%^&*()_+{}|:<>?"
 global lib2
 lib2 = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890`,./;'[]~!@#$%^&*()_+{}|:<>? "
-#global libc
-#libc = ""
+
+
+# global libc
+# libc = ""
 
 def menu():
     print("Welcome to BasicBrute\n")
     print("You must be here to make a library of passwords")
     print("The program will start soon but we need to know a few things first\n")
-    ans = str(input("How long would you like the passwords to be? (Limit of 3 characters)\n"))
+    ans = str(input("How long would you like the passwords to be? (Limit of 8 characters)\n"))
     print("Which library would you like to use?\n")
     global lib
     print("1.) " + str(lib) + " (This will make passwords only as long as you selected)\n")
@@ -44,9 +46,55 @@ def menu():
             L3()
         else:
             L3()
+    elif ans == "4":
+        if ans2 == "2":
+            lib = lib2
+            L4()
+        elif ans2 == "3":
+            custom_lib()
+            L4()
+        else:
+            L4()
+    elif ans == "5":
+        if ans2 == "2":
+            lib = lib2
+            L5()
+        elif ans2 == "3":
+            custom_lib()
+            L5()
+        else:
+            L5()
+    elif ans == "6":
+        if ans2 == "2":
+            lib = lib2
+            L6()
+        elif ans2 == "3":
+            custom_lib()
+            L6()
+        else:
+            L6()
+    elif ans == "7":
+        if ans2 == "2":
+            lib = lib2
+            L7()
+        elif ans2 == "3":
+            custom_lib()
+            L7()
+        else:
+            L7()
+    elif ans == "8":
+        if ans2 == "2":
+            lib = lib2
+            L8()
+        elif ans2 == "3":
+            custom_lib()
+            L8()
+        else:
+            L8()
     else:
         print("An error has occurred")
         menu()
+
 
 def custom_lib():
     global lib
@@ -66,12 +114,14 @@ def custom_lib():
         print("An error has occurred")
         custom_lib()
 
+
 def L1():
     for a in range(0, len(lib)):
         brute = lib[a]
         with open("file1.txt", 'a') as file:
             file.write(str(brute) + '\n')
             gc.collect()
+
 
 def L2():
     for a in range(0, len(lib)):
@@ -80,6 +130,7 @@ def L2():
             with open("file2.txt", 'a') as file:
                 file.write(str(brute) + '\n')
                 gc.collect()
+
 
 def L3():
     for a in range(0, len(lib)):
@@ -90,24 +141,66 @@ def L3():
                     file.write(str(brute) + '\n')
                     gc.collect()
 
+
 def L4():
     for a in range(0, len(lib)):
         for b in range(0, len(lib)):
             for c in range(0, len(lib)):
                 for d in range(0, len(lib)):
                     brute = lib[a] + lib[b] + lib[c] + lib[d]
-                    with open("file3.txt", 'a') as file:
+                    with open("file4.txt", 'a') as file:
                         file.write(str(brute) + '\n')
                         gc.collect()
-                        
- def L5():
+
+
+def L5():
     for a in range(0, len(lib)):
         for b in range(0, len(lib)):
             for c in range(0, len(lib)):
                 for d in range(0, len(lib)):
                     for e in range(0, len(lib)):
                         brute = lib[a] + lib[b] + lib[c] + lib[d] + lib[e]
-                        with open("file3.txt", 'a') as file:
-                            file.write(str(brute) + '\n') 
-                            gc.collect()                        
+                        with open("file5.txt", 'a') as file:
+                            file.write(str(brute) + '\n')
+                            gc.collect()
+
+def L6():
+    for a in range(0, len(lib)):
+        for b in range(0, len(lib)):
+            for c in range(0, len(lib)):
+                for d in range(0, len(lib)):
+                    for e in range(0, len(lib)):
+                        for f in range(0, len(lib)):
+                            brute = lib[a] + lib[b] + lib[c] + lib[d] + lib[e] + lib[f]
+                            with open("file6.txt", 'a') as file:
+                                file.write(str(brute) + '\n')
+                                gc.collect()
+
+def L7():
+    for a in range(0, len(lib)):
+        for b in range(0, len(lib)):
+            for c in range(0, len(lib)):
+                for d in range(0, len(lib)):
+                    for e in range(0, len(lib)):
+                        for f in range(0, len(lib)):
+                            for g in range(0, len(lib)):
+                                brute = lib[a] + lib[b] + lib[c] + lib[d] + lib[e] + lib[f] + lib[g]
+                                with open("file7.txt", 'a') as file:
+                                    file.write(str(brute) + '\n')
+                                    gc.collect()
+
+def L8():
+    for a in range(0, len(lib)):
+        for b in range(0, len(lib)):
+            for c in range(0, len(lib)):
+                for d in range(0, len(lib)):
+                    for e in range(0, len(lib)):
+                        for f in range(0, len(lib)):
+                            for g in range(0, len(lib)):
+                                for h in range(0, len(lib)):
+                                    brute = lib[a] + lib[b] + lib[c] + lib[d] + lib[e] + lib[f] + lib[g] + lib[h]
+                                    with open("file8.txt", 'a') as file:
+                                        file.write(str(brute) + '\n')
+                                        gc.collect()
+
 menu()
