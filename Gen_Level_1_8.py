@@ -4,7 +4,7 @@ import gc, time, threading, multiprocessing
 #lib = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890`,./;'[]~!@#$%^&*()_+{}|:<>?"
 global lib2
 lib = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890`,./;'[]~!@#$%^&*()_+{}|:<>? "
-
+time_lib = []
 
 # global libc
 # libc = "
@@ -51,11 +51,12 @@ def L3_thread():
         for b in range(0, len(lib)):
             for c in range(0, len(lib)):
                 brute = lib[a] + lib[b] + lib[c]
-                with open("file3.txt", 'a') as file:
-                    file.write(str(brute) + '\n')
+                #with open("file3.txt", 'a') as file:
+                #    file.write(str(brute) + '\n')
+                print(brute)
     time2 = time.time()
     time3 = time2 - time1
-    print(time3)
+    time_lib.append(time3)
 
 def L3_thread_loop():
     print("L3_thread_data\n")
@@ -63,6 +64,8 @@ def L3_thread_loop():
         T1 = threading.Thread(target=L3_thread)
         T1.start()
         T1.join()
+    for i in range(0, len(time_lib) -1):
+        print("Time: " + str(time_lib[i]))
 
 def L3_proc(lib):
     time1 = time.time()
@@ -117,11 +120,11 @@ def L3_jit_loop():
 
 #L3_gc_loop()
 #L3_clean_loop()
-#L3_thread_loop()
+L3_thread_loop()
 #L3_proc_loop2()
 #L3_proc_loop4()
 #L3_jit_loop()
 
-T1 = threading.Thread(target=L3_thread)
-T1.start()
-T1.join()
+#T1 = threading.Thread(target=L3_thread)
+#T1.start()
+#T1.join()
